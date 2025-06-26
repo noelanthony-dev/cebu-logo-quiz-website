@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cebu Logo Quiz</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="sticky top-0 bg-white shadow-md z-50">
+    <nav x-data="{ open: false }" class="max-w-4xl mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center text-xl font-semibold">
+        <img src="images/navbar-icon.webp" alt="Cebu Logo Quiz Logo" class="h-8 w-8 mr-2">
+        <span>Cebu Logo Quiz</span>
+      </a>
+      <button
+        @click="open = !open"
+        class="md:hidden text-gray-700 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+          <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div :class="open ? 'block' : 'hidden'" class="w-full md:block md:w-auto">
+        <ul class="flex flex-col md:flex-row md:space-x-8 space-y-2 md:space-y-0 mt-2 md:mt-0">
+          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section id="home" class="relative bg-[#FFAD3D] text-white">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center py-16 px-4">
+      <!-- Left: Headline & buttons -->
+      <div class="md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">How well do you know Cebu?</h1>
+        <p class="mt-4 text-lg">A fun logo guessing game featuring local Cebuano brands.</p>
+        <div class="mt-6 flex space-x-4">
+          <a href="https://apps.apple.com/us/app/cebu-logo-quiz/id6746560043" class="inline-block">
+            <img src="images/download-app-store.svg" alt="Download on the App Store" class="h-10">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.noelanthonydev.cebulogoquiz" class="inline-block">
+            <img src="images/get-it-on-google-play.png" alt="Get it on Google Play" class="h-10">
+          </a>
+        </div>
+      </div>
+      <!-- Right: Mockup image -->
+      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <img src="images/game-screenshot-1.PNG" alt="App Screenshot" class="w-32 md:w-48 transform rotate-2 shadow-lg rounded-xl">
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <a href="#about" class="absolute bottom-8 right-8 bg-white p-3 rounded-full shadow-md hover:bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </a>
+  </section>
+  <main class="max-w-4xl mx-auto p-4">
+    <section id="about" class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">About the Game</h2>
+        <div class="flex flex-col md:flex-row md:space-x-12">
+          <!-- Left column -->
+          <div class="md:w-1/2 space-y-12">
+            <!-- Why We Created -->
+            <div>
+              <h3 class="text-2xl font-bold text-[#FFAD3D] mb-4">Why We Created Cebu Logo Quiz</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We wanted to celebrate Cebu's rich local business culture and help both locals and tourists connect with the brands that make our island special. This game is our love letter to Cebu's entrepreneurial spirit.
+              </p>
+            </div>
+            <!-- What Makes It Unique -->
+            <div>
+              <h3 class="text-2xl font-bold text-[#FFAD3D] mb-4">What Makes It Unique</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <svg class="h-6 w-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div class="ml-3">
+                    <span class="font-semibold">Cebu-only content</span> – Exclusively featuring local Cebuano brands
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-6 w-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div class="ml-3">
+                    <span class="font-semibold">Trivia system</span> – Learn interesting facts about each brand
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-6 w-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div class="ml-3">
+                    <span class="font-semibold">Progress badges</span> – Earn titles like "Cebu Expert" as you advance
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- Who Should Play -->
+            <div>
+              <h3 class="text-2xl font-bold text-[#FFAD3D] mb-4">Who Should Play</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg text-center shadow">
+                  <img src="images/icon-cebuanos.svg" alt="" class="h-10 mx-auto">
+                  <h4 class="mt-4 font-semibold">Cebuanos</h4>
+                  <p class="mt-2 text-gray-600">Test your local knowledge</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center shadow">
+                  <img src="images/icon-tourists.svg" alt="" class="h-10 mx-auto">
+                  <h4 class="mt-4 font-semibold">Tourists</h4>
+                  <p class="mt-2 text-gray-600">Discover local favorites</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center shadow">
+                  <img src="images/icon-brand-fans.svg" alt="" class="h-10 mx-auto">
+                  <h4 class="mt-4 font-semibold">Brand Fans</h4>
+                  <p class="mt-2 text-gray-600">Appreciate local design</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right column: screenshot -->
+          <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+            <img src="images/game-screenshot-2.PNG" alt="Game levels screenshot" class="max-w-xs md:max-w-sm rounded-xl shadow-lg h-auto">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-8 text-center space-y-6">
+      <!-- Game Icon -->
+      <div>
+        <img src="images/navbar-icon.webp" alt="Cebu Logo Quiz Icon" class="h-12 w-12 mx-auto">
+      </div>
+
+      <!-- Follow Us -->
+      <div class="flex justify-center space-x-4">
+        <a href="https://www.instagram.com/cebulogoquiz/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" class="h-6 w-6">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61577180192484" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" class="h-6 w-6">
+
+        </a>
+      </div>
+
+      <!-- Download Links -->
+      <div class="flex justify-center space-x-4">
+        <a href="https://apps.apple.com/us/app/cebu-logo-quiz/id6746560043" target="_blank" rel="noopener">
+          <img src="images/download-app-store.svg" alt="Download on the App Store" class="h-10">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.noelanthonydev.cebulogoquiz" target="_blank" rel="noopener">
+          <img src="images/get-it-on-google-play.png" alt="Get it on Google Play" class="h-10">
+        </a>
+      </div>
+
+      <!-- Privacy Policy -->
+      <div>
+        <a href="https://sites.google.com/view/cebu-logo-quiz-privacy-policy/" target="_blank" rel="noopener" class="text-gray-600 hover:underline">
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
